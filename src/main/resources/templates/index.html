@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title>Books Store | Home page</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    .table .btn,
+    .btn-warning {
+      border-radius: .6em;
+    }
+
+    .btn-warning {
+      width: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-3">
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card shadow mt-3 p-3" style="border-radius: 1em;">
+
+          <h2><i class="fa fa-table me-2"></i>Books Data</h2>
+
+          <a class="btn btn-warning my-3" role="button" th:href="@{/create}"><i class="fa fa-user-plus me-2"></i>Add
+            Book</a>
+
+          <table class="table table-striped text-center" style="width: 100%;">
+            <thead class="bg-dark text-light">
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="s : ${books}">
+                <td scope="col" th:text="${s.title}"></td>
+                <td scope="col" th:text="${s.author}"></td>
+                <td scope="col" th:text="${'Rp'+ s.price}"></td>
+                <td scope="col" th:text="${s.stock +' pcs'}"></td>
+                <td scope="col">
+                  <a class="btn btn-sm btn-primary" role="button" th:href="${'/detail/'+s.id}"><span><i
+                        class="fa fa-info-circle me-2"></i>Detail</span></a>
+                  <a class="btn btn-sm btn-success" role="button" th:href="${'/edit/'+s.id}"><span><i
+                        class="fa fa-edit me-2"></i>Edit</span></a>
+                  <a class="btn btn-sm btn-danger" role="button" th:href="${'/delete/'+s.id}"><span><i
+                        class="fa fa-trash me-2"></i>Remove</span></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

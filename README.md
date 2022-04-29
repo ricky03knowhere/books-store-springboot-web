@@ -1,6 +1,10 @@
 ## Books Store (UTS Praktikum)
+--------------------------
+  🚀 Deployed at : [https://books-store07.herokuapp.com/](https://student-crud-web.herokuapp.com/)
 
-- - ### Sign Up Page
+----------------------------
+
+- ### Sign Up Page
     ![Sign Up Page](img/Screenshot%202022-04-25%20163015.png "Sign Up Page")
 
     ![Sign Up Page](img/Screenshot%202022-04-25%20164342.png "Sign Up Page")
